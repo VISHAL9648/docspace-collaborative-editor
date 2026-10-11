@@ -1,0 +1,9 @@
+DocSpace Sprint Planning Meeting Notes
+
+Agenda:
+Discussed the document editor milestones, Tiptap JSON schema structure, and Supabase database integration.
+
+Action Items:
+- Run the SQL migration in Supabase SQL editor.
+- Test import with Markdown and TXT files.
+- Validate row-level security for shared collaborators.
