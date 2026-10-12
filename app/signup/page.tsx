@@ -259,9 +259,7 @@ export default function SignUpPage() {
           )}
 
           {/* Assessment Tip */}
-          <div className="mt-6 flex items-start gap-2 rounded-lg bg-blue-50/60 p-3 text-[11px] text-blue-900 dark:bg-blue-950/40 dark:text-blue-200">
-            <ShieldCheck className="h-4 w-4 shrink-0 text-blue-600 dark:text-blue-400 mt-0.5" />
-          </div>
+          
 
           <div className="mt-5 text-center text-xs text-zinc-500 dark:text-zinc-400">
             Already have an account?{" "}
