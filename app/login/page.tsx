@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/utils/supabase/client";
-import { FileText, Loader2, AlertCircle, ArrowRight, UserCheck, KeyRound } from "lucide-react";
+import { FileText, Loader2, AlertCircle, ArrowRight } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -51,12 +51,6 @@ export default function LoginPage() {
     }
   };
 
-  const fillDemoAccount = (demoEmail: string) => {
-    setEmail(demoEmail);
-    setPassword("DocSpaceDemo2026!");
-    setErrorMessage(null);
-  };
-
   return (
     <div className="flex min-h-screen flex-col justify-center bg-zinc-50 px-4 py-12 dark:bg-zinc-950 sm:px-6 lg:px-8 font-sans">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -72,9 +66,6 @@ export default function LoginPage() {
         <h2 className="mt-4 text-center text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-2xl">
           Sign in to your account
         </h2>
-        <p className="mt-1 text-center text-xs text-zinc-500 dark:text-zinc-400 sm:text-sm">
-          Collaborative documents with PostgreSQL and Tiptap
-        </p>
       </div>
 
       <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-md">
@@ -150,49 +141,6 @@ export default function LoginPage() {
               )}
             </button>
           </form>
-
-          {/* Quick Demo Credentials Autofill */}
-          <div className="mt-6 border-t border-zinc-200 pt-5 dark:border-zinc-800">
-            <div className="flex items-center gap-1.5 text-xs font-medium text-zinc-500 dark:text-zinc-400 mb-2.5">
-              <KeyRound className="h-3.5 w-3.5 text-amber-500" />
-              <span>Assessment Demo Accounts:</span>
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                onClick={() => fillDemoAccount("alex@example.com")}
-                className="flex items-center justify-center gap-1.5 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 text-xs font-medium text-zinc-700 hover:bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700/80 transition"
-              >
-                <UserCheck className="h-3.5 w-3.5 text-blue-500" />
-                <span>Alex (Demo 1)</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => fillDemoAccount("jordan@example.com")}
-                className="flex items-center justify-center gap-1.5 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 text-xs font-medium text-zinc-700 hover:bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700/80 transition"
-              >
-                <UserCheck className="h-3.5 w-3.5 text-purple-500" />
-                <span>Jordan (Demo 2)</span>
-              </button>
-            </div>
-            <div className="mt-2">
-              <button
-                type="button"
-                onClick={() => {
-                  setEmail("suvishalsharma6@gmail.com");
-                  setPassword("");
-                  setErrorMessage(null);
-                }}
-                className="w-full flex items-center justify-center gap-1.5 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 text-xs font-medium text-zinc-700 hover:bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700/80 transition"
-              >
-                <UserCheck className="h-3.5 w-3.5 text-emerald-500" />
-                <span>Fill suvishalsharma6@gmail.com</span>
-              </button>
-            </div>
-            <p className="mt-2 text-[11px] text-zinc-400 dark:text-zinc-500 text-center">
-              Password for both: <code className="font-mono">DocSpaceDemo2026!</code>
-            </p>
-          </div>
 
           {/* Sign Up Link */}
           <div className="mt-5 text-center text-xs text-zinc-500 dark:text-zinc-400">
